@@ -1,64 +1,105 @@
-// icons' colours changed and an image has been added
+// Button code added and button color changed
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    const MaterialApp(
-      title: 'Flutter Tutorial',
-      home: TutorialHome(),
-      // object of the class
-    ),
-  );
-}
-
-class TutorialHome extends StatelessWidget {
-  // static pages/function => StatelesWidget
-  const TutorialHome({super.key});
+class MyButton extends StatelessWidget {
+  const MyButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Scaffold is a layout for
-    // the major Material Components.
-    return Scaffold(
-      appBar: AppBar(
-        leading: const IconButton(
-          icon: Icon(
-            Icons.menu_book_sharp,
-            color: Color(0xffF02E65),
-          ),
-          tooltip: 'Navigation menu',
-          onPressed: null,
+    return GestureDetector(
+      onTap: () {
+        print('MyButton was tapped!');
+      },
+      child: Container(
+        height: 50,
+        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.symmetric(horizontal: 8),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.blueAccent[400],
         ),
-        title: const Text('Example title'),
-        actions: const [
-          IconButton(
-            icon: Icon(Icons.search),
-            tooltip: 'Search',
-            onPressed: null,
-          ),
-        ],
-      ),
-      // body is the majority of the screen.
-      // body: const Center(
-      //   // Center: text centered
-      //   child: Text('Hello, world!'),
-      // ),
-      body: const Center(
-          child: SizedBox(
-        height: 400,
-        width: 400,
-        child: (Image(
-            image: NetworkImage(
-                "https://pbs.twimg.com/media/FXjXAojXgAcR_-g.jpg:large"))),
-      )),
-      floatingActionButton: const FloatingActionButton(
-        tooltip: 'Add', // used by assistive technologies
-        onPressed: null,
-        child: Icon(Icons.add),
+        child: const Center(
+          child: Text('Engage'),
+        ),
       ),
     );
   }
 }
+
+void main() {
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: MyButton(),
+        ),
+      ),
+    ),
+  );
+}
+
+
+// // icons' colours changed and an image has been added
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(
+//     const MaterialApp(
+//       title: 'Flutter Tutorial',
+//       home: TutorialHome(),
+//       // object of the class
+//     ),
+//   );
+// }
+
+// class TutorialHome extends StatelessWidget {
+//   // static pages/function => StatelesWidget
+//   const TutorialHome({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     // Scaffold is a layout for
+//     // the major Material Components.
+//     return Scaffold(
+//       appBar: AppBar(
+//         leading: const IconButton(
+//           icon: Icon(
+//             Icons.menu_book_sharp,
+//             color: Color(0xffF02E65),
+//           ),
+//           tooltip: 'Navigation menu',
+//           onPressed: null,
+//         ),
+//         title: const Text('Example title'),
+//         actions: const [
+//           IconButton(
+//             icon: Icon(Icons.search),
+//             tooltip: 'Search',
+//             onPressed: null,
+//           ),
+//         ],
+//       ),
+//       // body is the majority of the screen.
+//       // body: const Center(
+//       //   // Center: text centered
+//       //   child: Text('Hello, world!'),
+//       // ),
+//       body: const Center(
+//           child: SizedBox(
+//         height: 400,
+//         width: 400,
+//         child: (Image(
+//             image: NetworkImage(
+//                 "https://pbs.twimg.com/media/FXjXAojXgAcR_-g.jpg:large"))),
+//       )),
+//       floatingActionButton: const FloatingActionButton(
+//         tooltip: 'Add', // used by assistive technologies
+//         onPressed: null,
+//         child: Icon(Icons.add),
+//       ),
+//     );
+//   }
+// }
 
 
 
